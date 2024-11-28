@@ -1,5 +1,10 @@
 
  /* Create a sticky/fixed navbar */
+
+ body{
+    background-color: rgba(0, 0, 0, 0.7);
+ }
+
  #boxnavbar {
     overflow: hidden;
     padding: 30px 10px; /* Large padding which will shrink on scroll (using JS) */
@@ -55,4 +60,22 @@
     margin: auto;
     transition: all .2s;
     position: relative;
+}
+
+.go_top {
+    transition: opacity 0.3s ease;
+}
+
+.go_top.show {
+    display: inline-block;
+    opacity: 1;
+}
+
+/****************/
+/** CONTAINER ***/
+/****************/
+
+.build{
+    width: 1000px;
+    margin: 300px auto;
 }
