@@ -2,7 +2,7 @@
  /* Create a sticky/fixed navbar */
 
  body{
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #272727;
  }
 
  .container-highlight{
@@ -30,6 +30,8 @@
     top: 0; /* At the top */
     z-index: 90;
     transition: all .2s;
+    align-items: center;
+    display: flex;
 }
 
 .header-left{
@@ -63,17 +65,27 @@
     display: inline-block;
 }
 
-#roundednav{
-    padding: 10px;
-    border-radius: 50px;
+.access {
+    align-items: center;
+    border-radius: 100px;
+    display: flex;
+    padding: 0 5px 0 5px;
+}
 
-    -moz-box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.3);
+.access:hover {
+    backdrop-filter: saturate(150%);
+    -webkit-backdrop-filter: saturate(150%);
+    background-color: hsla(0,0%,100%,.15);
+}
+
+#roundednav{
+    border-radius: 50px;
     width: fit-content;
     margin: auto;
-    transition: all .2s;
     position: relative;
+    height: 55px;
+    display: flex;
+    align-items: center;
 }
 
 #glossy{
@@ -102,6 +114,10 @@
 /****************/
 /** CONTAINER ***/
 /****************/
+
+p{
+    color: #999999;
+}
 
 .build{
     width: 1000px;
