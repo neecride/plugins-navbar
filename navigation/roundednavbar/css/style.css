@@ -5,6 +5,22 @@
     background-color: rgba(0, 0, 0, 0.7);
  }
 
+ .container-highlight{
+    background-image: url("../img/stalk2.jpg");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    height: 60vh;
+    justify-content: center;
+    margin-bottom: 10px;
+    max-height: 620px;
+    min-height: 550px;
+    overflow: hidden;
+    padding: 30px;
+    position: relative;
+ }
+
  #boxnavbar {
     overflow: hidden;
     padding: 30px 10px; /* Large padding which will shrink on scroll (using JS) */
@@ -50,9 +66,7 @@
 #roundednav{
     padding: 10px;
     border-radius: 50px;
-    backdrop-filter: blur(60px) saturate(100%);
-    -webkit-backdrop-filter: blur(60px) saturate(100%);
-    background-color: transparent;
+
     -moz-box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.3);
     box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.3);
@@ -60,6 +74,20 @@
     margin: auto;
     transition: all .2s;
     position: relative;
+}
+
+#glossy{
+    backdrop-filter: blur(60px) saturate(100%);
+    -webkit-backdrop-filter: blur(60px) saturate(100%);
+    background-color: transparent;
+    border-radius: 35px;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .2s;
 }
 
 .go_top {
@@ -77,5 +105,5 @@
 
 .build{
     width: 1000px;
-    margin: 300px auto;
+    margin: 30px auto;
 }
