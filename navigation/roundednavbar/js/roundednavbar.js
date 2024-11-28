@@ -21,13 +21,17 @@ $(document).ready(function() {
 function boxNavBar() {
   $('#boxnavbar').css({
     'padding': '0',
-    'background-color': '#101010',
+    'background-color': 'rgba(0, 0, 0, 0.8',
     'box-shadow': '0 0 1px 3px rgba(0, 0, 0, 0.3)',
     'transition': '.2s'
   });
   $('#roundednav').css({
     'box-shadow': 'unset',
     'padding': '0',
+    'transition': '.2s'
+  });
+  $('#glossy').css({
+    'backdrop-filter': 'none',
     'transition': '.2s'
   });
   $('#logo').css({
@@ -48,6 +52,10 @@ function roundedNav() {
   $('#roundednav').css({
     'box-shadow': '0 0 1px 3px rgba(0, 0, 0, 0.3)',
     'padding': '10px',
+    'transition': '.2s'
+  });
+  $('#glossy').css({
+    'backdrop-filter': 'blur(60px) saturate(100%)',
     'transition': '.2s'
   });
   $('#logo').css({
