@@ -40,13 +40,6 @@ function boxNavBar() {
   $('.header-right').css({
     'margin-top': '0'
   });
-  $('.cold').css({
-    'background-color':'transparent',
-    'background-image': 'url(../roundednavbar/img/bg-menu.jpg)',
-    'background-repeat': 'repeat-x',
-    'background-position': '50%',
-    'transition': '.2s'
-  });
 }
 
 function roundedNav() {
@@ -70,10 +63,6 @@ function roundedNav() {
   });
   $('.header-right').css({
     'margin-top': '10px'
-  });
-  $('.cold').css({
-    'background-color':'transparent',
-    'background-image': 'none'
   });
 }
 
