@@ -1,11 +1,7 @@
-
- /* Create a sticky/fixed navbar */
+/* Create a sticky/fixed navbar */
 
 body{
-    background-color: #272727;
-    background-image: url(../img/bg-site.png);
-    background-repeat: repeat;
-    background-attachment: fixed;
+    background-color: #111111;
 }
 
 #boxnavbar {
@@ -19,11 +15,6 @@ body{
     transition: all .2s;
     align-items: center;
     display: flex;
-}
-
-.cold{
-    background-color: transparent;
-    background-image: none;
 }
 
 .header-left{
@@ -127,29 +118,31 @@ body{
     box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
 }
 
-.example-2 {
+.socials {
     position: absolute;
-    right: 10%;
-    top: 499px;
+    right: 5%;
+    top: 590px;
     z-index: 1000;
-    border-radius: 5px;
-    padding: 0.5em 1.5em 0.5em 1.5em;
+    border-radius: 50px;
+    padding: 0.2em 1em 0.2em 1em;
     margin-bottom: unset;
     background-image: url('../img/module_metal.png');
 }
 
-.example-2 ul{
+.socials ul{
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.example-2 .icon-content {
+.socials .icon-content {
     position: relative;
     margin: 1em 0 1em 0;
+    box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
 }
 
-.example-2 .icon-content a {
+.socials .icon-content a {
     position: relative;
     overflow: hidden;
     display: flex;
@@ -163,18 +156,18 @@ body{
     transition: all 0.3s ease-in-out;
 }
 
-.example-2 .icon-content a:hover {
+.socials .icon-content a:hover {
     box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
 }
 
-.example-2 .icon-content a svg {
+.socials .icon-content a svg {
     position: relative;
     z-index: 1;
     width: 30px;
     height: 30px;
 }
 
-.example-2 .icon-content .tooltip {
+.socials .icon-content .tooltip {
     position: absolute;
     top: 100%;
     right: 160%;
@@ -188,17 +181,17 @@ body{
     transition: all 0.3s ease;
 }
 
-.example-2 .icon-content:hover .tooltip {
+.socials .icon-content:hover .tooltip {
     opacity: 1;
     visibility: visible;
     top: -55px;
 }
 
-.example-2 .icon-content a:hover {
+.socials .icon-content a:hover {
     color: white;
 }
 
-.example-2 .icon-content a .filled {
+.socials .icon-content a .filled {
     position: absolute;
     top: auto;
     bottom: 0;
@@ -209,22 +202,22 @@ body{
     transition: all 0.3s ease-in-out;
 }
 
-.example-2 .icon-content a:hover .filled {
+.socials .icon-content a:hover .filled {
     height: 100%;
 }
 
-.example-2 .icon-content a[data-social="x"] .filled,
-.example-2 .icon-content a[data-social="x"] ~ .tooltip {
+.socials .icon-content a[data-social="x"] .filled,
+.socials .icon-content a[data-social="x"] ~ .tooltip {
     background-color: #1d9bf0;
 }
 
-.example-2 .icon-content a[data-social="github"] .filled,
-.example-2 .icon-content a[data-social="github"] ~ .tooltip {
+.socials .icon-content a[data-social="github"] .filled,
+.socials .icon-content a[data-social="github"] ~ .tooltip {
     background-color: #24262a;
 }
 
-.example-2 .icon-content a[data-social="instagram"] .filled,
-.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+.socials .icon-content a[data-social="instagram"] .filled,
+.socials .icon-content a[data-social="instagram"] ~ .tooltip {
     background: linear-gradient(
         45deg,
         #405de6,
@@ -236,8 +229,8 @@ body{
     );
 }
 
-.example-2 .icon-content a[data-social="youtube"] .filled,
-.example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
+.socials .icon-content a[data-social="youtube"] .filled,
+.socials .icon-content a[data-social="youtube"] ~ .tooltip {
     background-color: #ff0000;
 }
   
@@ -247,10 +240,7 @@ body{
 /****************/
 
 .alert-box {
-    position: relative;
-    top: -81px;
-    z-index: 10;
-    margin-bottom: 15px;
+    margin-bottom: 1.5rem;
     border-radius: 5px;
 }
 
@@ -282,13 +272,39 @@ button.close-alert-box {
 	padding: 15px;
 }
 
+/* Animation au hover */
+.alert-box:hover .arrow {
+    transform: translateX(0); /* La flèche revient à sa position normale */
+    opacity: 1; /* La flèche devient visible */
+}
+
+.arrow{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    background-image: url(../img/arrow.svg);
+    background-repeat: no-repeat;
+    background-size: 65%;
+    background-position: center center;
+    transition-duration: 1.5s;
+}
+
+.alert-box .arrow {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    position: absolute;
+    right: 5%;
+}
+
 /******************/
 /*** FLOATINGBOX **/
 /******************/
 
 .floating-box {
     position: absolute; /* Position par défaut (sera changée par jQuery) */
-    top: 499px; /* Point initial */
+    top: 590px; /* Point initial */
     left: 5%; /* Toujours à gauche de la page */
     z-index: 10;
     width: 15%;
@@ -307,69 +323,19 @@ button.close-alert-box {
 
 .alert-box-hover {
     position: relative;
-    display: inline-block;
-    background: #f5f5f5;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 0 7px 0 #696e6e;
     transition: box-shadow 0.5s ease;
     cursor: pointer;
 }
- 
-/* 
-.alert-box-hover::before {
-    content: '';
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #2e2e2e;
-    z-index: -1;
-    transition: bottom 0.5s ease;
-}
   
-.alert-box-hover:hover::before {
-    bottom :0;
-}*/
-  
-/* Titre et flèche */
-
-.arrow{
-    width: 50px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    background-image: url(../img/arrow.svg);
-    background-repeat: no-repeat;
-    background-size: 65%;
-    background-position: center center;
-    transition-duration: 1.5s;
-}
-
-.alert-box-title .title-text {
-    white-space: nowrap; /* Empêche le retour à la ligne */
-    display: inline-block;
-}
-
-.alert-box-title .arrow {
-    margin-left: 75%;
-    transform: translateX(-100%); /* Position initiale : à gauche du texte */
-    opacity: 0; /* Invisible par défaut */
-    transition: transform 0.5s ease, opacity 0.5s ease;
-}
-  
-/* Animation au hover */
-.alert-box-hover:hover .arrow {
-    transform: translateX(0); /* La flèche revient à sa position normale */
-    opacity: 1; /* La flèche devient visible */
-}
-
 /*black*/
 .alert-black {
 	background-color: #212121;
 	box-shadow: 0 0 7px 0 #202121;
 }
+
 .alert-black > .alert-box-title {
 	background-color: #2e2e2e;
 }
@@ -447,6 +413,15 @@ button.close-alert-box {
 	background-color: #1abc9c;
 }
 
+/* item édit */
+
+.list-group-item {
+    background:none;
+    color: #fff;
+    border: 1px solid aquamarine;
+    background-image: url('../img/module_metal.png');
+    background-position: left;
+}
 
 /****************/
 /** CONTAINER ***/
@@ -462,45 +437,42 @@ p{
 }
 
 .build{
-    width: 1000px;
-    margin: 30px auto;
+    width: 55%;
+    margin: 40px auto;
 }
 
 .container-highlight{
-    background-image: url("../img/default.png");
-    background-position: 50%;
-    background-repeat: repeat;
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
     display: flex;
     height: 60vh;
     justify-content: center;
     margin-bottom: 10px;
     max-height: 620px;
     min-height: 550px;
-    overflow: hidden;
-    padding: 30px;
     position: relative;
-    box-shadow: inset 0 -10px 10px rgba(0, 0, 0, 0.5);
+    background-color: #212121;
+	box-shadow: 0 0 7px 0 #202121;
 }
 
 .wide{
     background-image: url(../img/1.jpg);
-    width: 650px;
+    width: 40%;
     height: 50%;
     position: absolute;
     top: 154px;
-    right: 10%;
+    right: 5%;
     border-radius: 25px;
     box-shadow: 
-        0 0 1px 3px rgba(0, 0, 0, 0.3), /* Ombre extérieure */
-        inset 0 0 30px rgba(0, 0, 0, 0.5) /* Ombre intérieure */
-    ; 
+        0 0 1px 3px rgba(0, 0, 0, 0.5), 
+        inset 0 0 30px rgba(0, 0, 0, 0.9)
+    ;
     background-position: 79%;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .splash{
-    width: 650px;
+    width: 40%;
     height: 50%;
     position: absolute;
     top: 154px;
@@ -515,4 +487,30 @@ p{
 
 .splash p{
     color: #fff;
+}
+
+.line{
+    border-radius: 50px;
+    padding: 0.2em 0.2em 0.2em 0.2em;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    background-image: url('../img/module_metal.png');
+}
+
+.line span{
+    color: #fff;
+}
+
+.line span a{
+    color: #912c1a;
+}
+
+.copyright{
+    padding: 10px;
+    border-top-left-radius:25px;
+    border-bottom-left-radius:25px;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+    background-image: url('../img/module_metal.png');
+    background-color: #2980b9;
 }
